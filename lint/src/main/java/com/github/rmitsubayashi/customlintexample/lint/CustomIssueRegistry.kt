@@ -6,7 +6,7 @@ import java.util.*
 
 class CustomIssueRegistry: IssueRegistry() {
     override val issues: List<Issue>
-        get() = Collections.singletonList(GivenWhenThenDetector.ISSUE)
+        get() = listOf(GivenWhenThenDetector.ISSUE, LongMethodNameDetector.ISSUE)
 
     override val api: Int =
         com.android.tools.lint.detector.api.CURRENT_API
