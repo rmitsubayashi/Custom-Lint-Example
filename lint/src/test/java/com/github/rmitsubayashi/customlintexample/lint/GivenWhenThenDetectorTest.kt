@@ -30,7 +30,7 @@ class GivenWhenThenDetectorTest: LintDetectorTest() {
         lint().files(
             java(header + correctAnnotation + correctMethodName + footer)
         ).run()
-        .expectWarningCount(0).expectErrorCount(0)
+        .expectClean()
     }
 
     fun testAnnotated_incorrect() {
@@ -44,7 +44,7 @@ class GivenWhenThenDetectorTest: LintDetectorTest() {
         lint().files(
             java(header + incorrectMethodName + footer)
         ).run()
-        .expectWarningCount(0).expectErrorCount(0)
+        .expectClean()
     }
 
     fun testWrongAnnotation_incorrect() {
@@ -69,7 +69,7 @@ class GivenWhenThenDetectorTest: LintDetectorTest() {
                     "    }\n" +
                     "}\n")
         ).run()
-            .expectWarningCount(0)
+            .expectClean()
     }
 
     fun testKotlinIncorrect() {
